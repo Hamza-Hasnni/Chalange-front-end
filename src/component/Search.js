@@ -1,11 +1,15 @@
 import React ,{useState} from 'react'
+import { useHistory } from 'react-router-dom';
+
 
 function Search({setFila}) {
+    const history = useHistory()
     const [search, setSearch] = useState("")   
  const handleSearchFinal=(e)=>{
      e.preventDefault();
        setFila(search);
        setSearch("")
+       history.push("/")
      }
     return (
         <div>
